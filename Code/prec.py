@@ -14,7 +14,7 @@ import matplotlib.pyplot as mp
 # In[19]:
 
 
-datos = pd.read_excel(open('datos.xlsx', 'rb'), sheet_name='Datos')
+datos = pd.read_excel(open('/home/ubuntu/prec/data/data.xlsx', 'rb'), sheet_name='Datos')
 datos.head(5)
 
 
