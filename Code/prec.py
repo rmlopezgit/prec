@@ -1,38 +1,40 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[6]:
 
+
+# librerías:
 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 import matplotlib.pyplot as mp
+import mlflow
+from scipy.cluster.hierarchy import linkage, fcluster
+from sklearn.preprocessing import StandardScaler
+from sklearn.decomposition import PCA
+from sklearn.metrics import silhouette_score
 
 
-# In[4]:
+# In[9]:
 
 
 datos = pd.read_excel(r'/home/ubuntu/prec/data/data.xlsx', sheet_name='Datos')
+#datos = pd.read_excel(r'C:/Users/rlope/Downloads/data.xlsx', sheet_name='Datos')
 datos.head(5)
-
-
-# In[10]:
-
-
-datos = datos.set_index('Fecha')
 
 
 # # Descripción de los datos
 
-# In[11]:
+# In[ ]:
 
 
 datos.shape
 
 
-# In[12]:
+# In[ ]:
 
 
 AtributosNumericos = datos.columns
@@ -40,21 +42,21 @@ AtributosNumericos = AtributosNumericos[1:]
 print(AtributosNumericos)
 
 
-# In[13]:
+# In[ ]:
 
 
 Estadisticas = pd.DataFrame(datos)
 print(Estadisticas.describe())
 
 
-# In[14]:
+# In[ ]:
 
 
 sns.pairplot(datos, kind="scatter")
 plt.show()
 
 
-# In[15]:
+# In[ ]:
 
 
 correlation_matrix = datos.corr()
@@ -64,7 +66,7 @@ mp.show()
 print(correlation_matrix)
 
 
-# In[16]:
+# In[ ]:
 
 
 for i in AtributosNumericos:
@@ -83,3 +85,83 @@ for i in AtributosNumericos:
 # 
 # 
 # 
+
+# In[ ]:
+
+
+datos = datos.set_index('Fecha')
+
+
+# In[ ]:
+
+
+# Se defienen las x como la base sin las dos primeras columnas:
+
+x = datos.iloc[:, 2:]
+x
+
+
+# In[ ]:
+
+
+# Estandarizamos las variables para que no influyan las distintas medidas:
+
+scaler = StandardScaler()
+x_estandarizado = scaler.fit_transform(x)
+x_estandarizado
+
+
+# In[ ]:
+
+
+# Se tienen entonces 145 observaciones para 9 variables estandarizadas:
+
+print(len(x_estandarizado[0]))
+print(len(x_estandarizado))
+
+
+# In[ ]:
+
+
+methods = ['single', 'complete', 'average', 'centroid','ward']
+
+
+# In[ ]:
+
+
+# registre el experimento
+experiment = mlflow.set_experiment("Experimientos de Clusters indicadores de Riesgo")
+
+
+# In[ ]:
+
+
+for method in methods:
+    
+    with mlflow.start_run(experiment_id=experiment.experiment_id):
+        # defina los parámetros del modelo
+        # Configurar y aplicar PCA:
+        n_components = 0.80  # Retener el 80% de la varianza.
+        pca = PCA(n_components=n_components, svd_solver='full', random_state=0)
+        pca.fit(x_estandarizado)
+
+        # Ajustar PCA a los datos originales y transformarlos
+        x_reduced = pca.fit_transform(x_estandarizado)
+
+        distances = linkage(x_reduced, method=method, metric="euclidean")
+        clusters = fcluster(distances, 3, criterion="distance")
+        plt.title('linkage: ' + method)
+        plt.scatter(x_reduced[:,0], x_reduced[:,1], c=clusters, cmap='tab20b')
+        plt.show()
+        score_7 = silhouette_score(x_reduced, clusters)
+        print(f"Silhouette Score: {score_7}")
+
+        # Registre los parámetros
+        mlflow.log_param("Metodo", method)
+
+        # Cree y registre la métrica de interés
+        mlflow.log_metric("Silhouette core", score_7)
+        print(score_7)
+
+        mlflow.log_param("Varianza explicada para PCA", n_components)
+
