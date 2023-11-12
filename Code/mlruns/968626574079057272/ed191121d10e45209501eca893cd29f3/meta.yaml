@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/ed191121d10e45209501eca893cd29f3/artifacts
+end_time: 1699751503449
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: ed191121d10e45209501eca893cd29f3
+run_name: nosy-chimp-213
+run_uuid: ed191121d10e45209501eca893cd29f3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1699751503347
+status: 3
+tags: []
+user_id: ubuntu

@@ -59,11 +59,11 @@ plt.show()
 # In[ ]:
 
 
-correlation_matrix = datos.corr()
-dataplot = sns.heatmap(datos.corr(), cmap="YlGnBu", annot=True)
+#correlation_matrix = datos.corr()
+#dataplot = sns.heatmap(datos.corr(), cmap="YlGnBu", annot=True)
 # displaying heatmap
-mp.show()
-print(correlation_matrix)
+#mp.show()
+#print(correlation_matrix)
 
 
 # In[ ]:
@@ -141,7 +141,7 @@ for method in methods:
     with mlflow.start_run(experiment_id=experiment.experiment_id):
         # defina los parámetros del modelo
         # Configurar y aplicar PCA:
-        n_components = 0.80  # Retener el 80% de la varianza.
+        n_components = 0.75  # Retener el 80% de la varianza.
         pca = PCA(n_components=n_components, svd_solver='full', random_state=0)
         pca.fit(x_estandarizado)
 

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/2cdaaa3d5bad44fc9711a41bf52cebd4/artifacts
+end_time: 1699751503560
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: 2cdaaa3d5bad44fc9711a41bf52cebd4
+run_name: chill-grouse-924
+run_uuid: 2cdaaa3d5bad44fc9711a41bf52cebd4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1699751503452
+status: 3
+tags: []
+user_id: ubuntu

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/9bdff02ad0d34d03be6b39c39987c6cc/artifacts
+end_time: 1699751241346
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: 9bdff02ad0d34d03be6b39c39987c6cc
+run_name: burly-horse-352
+run_uuid: 9bdff02ad0d34d03be6b39c39987c6cc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1699751241231
+status: 3
+tags: []
+user_id: ubuntu

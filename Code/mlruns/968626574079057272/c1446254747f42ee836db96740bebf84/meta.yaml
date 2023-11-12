@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/c1446254747f42ee836db96740bebf84/artifacts
+end_time: 1699751503232
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: c1446254747f42ee836db96740bebf84
+run_name: sincere-wasp-503
+run_uuid: c1446254747f42ee836db96740bebf84
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1699751503005
+status: 3
+tags: []
+user_id: ubuntu

@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/edfd5dc9b5144467a8e44be98031c46a/artifacts
+end_time: 1699751503344
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: edfd5dc9b5144467a8e44be98031c46a
+run_name: skittish-mare-347
+run_uuid: edfd5dc9b5144467a8e44be98031c46a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1699751503235
+status: 3
+tags: []
+user_id: ubuntu
