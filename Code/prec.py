@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[1]:
 
 
 # librerías:
@@ -18,55 +18,63 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score
 
 
-# In[9]:
+# In[2]:
 
 
 datos = pd.read_excel(r'/home/ubuntu/prec/data/data.xlsx', sheet_name='Datos')
 #datos = pd.read_excel(r'C:/Users/rlope/Downloads/data.xlsx', sheet_name='Datos')
 datos.head(5)
+datos_2 = datos
 
 
 # # Descripción de los datos
 
-# In[ ]:
+# In[3]:
 
 
 datos.shape
 
 
-# In[ ]:
+# In[4]:
+
+
+datos.head(5)
+
+
+# In[5]:
 
 
 AtributosNumericos = datos.columns
-AtributosNumericos = AtributosNumericos[1:]
+AtributosNumericos = AtributosNumericos[2:]
 print(AtributosNumericos)
 
 
-# In[ ]:
+# In[6]:
 
 
 Estadisticas = pd.DataFrame(datos)
 print(Estadisticas.describe())
 
 
-# In[ ]:
+# In[7]:
 
 
 sns.pairplot(datos, kind="scatter")
 plt.show()
 
 
-# In[ ]:
+# In[8]:
 
 
-#correlation_matrix = datos.corr()
-#dataplot = sns.heatmap(datos.corr(), cmap="YlGnBu", annot=True)
+datos2 = datos.drop('Entidad', axis=1)
+correlation_matrix = datos2.corr()
+dataplot = sns.heatmap(datos2.corr(), cmap="YlGnBu", annot=True)
 # displaying heatmap
-#mp.show()
-#print(correlation_matrix)
+mp.show()
+print(correlation_matrix)
 
 
-# In[ ]:
+# In[9]:
 
 
 for i in AtributosNumericos:
@@ -86,22 +94,22 @@ for i in AtributosNumericos:
 # 
 # 
 
-# In[ ]:
+# In[10]:
 
 
 datos = datos.set_index('Fecha')
 
 
-# In[ ]:
+# In[11]:
 
 
 # Se defienen las x como la base sin las dos primeras columnas:
 
-x = datos.iloc[:, 2:]
+x = datos.iloc[:, 1:]
 x
 
 
-# In[ ]:
+# In[12]:
 
 
 # Estandarizamos las variables para que no influyan las distintas medidas:
@@ -111,7 +119,7 @@ x_estandarizado = scaler.fit_transform(x)
 x_estandarizado
 
 
-# In[ ]:
+# In[13]:
 
 
 # Se tienen entonces 145 observaciones para 9 variables estandarizadas:
@@ -120,20 +128,26 @@ print(len(x_estandarizado[0]))
 print(len(x_estandarizado))
 
 
-# In[ ]:
+# In[14]:
 
 
 methods = ['single', 'complete', 'average', 'centroid','ward']
 
 
-# In[ ]:
+# In[15]:
 
 
 # registre el experimento
 experiment = mlflow.set_experiment("Experimientos de Clusters indicadores de Riesgo")
 
 
-# In[ ]:
+# In[16]:
+
+
+datos.head(5)
+
+
+# In[17]:
 
 
 for method in methods:
@@ -141,7 +155,7 @@ for method in methods:
     with mlflow.start_run(experiment_id=experiment.experiment_id):
         # defina los parámetros del modelo
         # Configurar y aplicar PCA:
-        n_components = 0.75  # Retener el 80% de la varianza.
+        n_components = 0.80  # Retener el 80% de la varianza.
         pca = PCA(n_components=n_components, svd_solver='full', random_state=0)
         pca.fit(x_estandarizado)
 
@@ -164,4 +178,20 @@ for method in methods:
         print(score_7)
 
         mlflow.log_param("Varianza explicada para PCA", n_components)
+
+
+# In[18]:
+
+
+indicador = x_reduced[:, 0]
+indicador = pd.DataFrame(indicador)
+indicador.rename(columns={0: 'Indicador'}, inplace=True)
+indicador
+
+# Se integran los campos de Fecha y Banco de la base:
+indicador['Fecha'] = datos_2['Fecha']
+indicador['Entidad'] = datos_2['Entidad']
+indicador
+
+indicador.to_excel('/home/ubuntu/prec/data/PCA_ncomp_1.xlsx', index=False)
 
