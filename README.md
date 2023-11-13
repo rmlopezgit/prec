@@ -1,4 +1,4 @@
-# Perfil de riesgo establecimientos de credito
+# Perfil de riesgo establecimientos de crédito
 
 Repositorio git para el proyecto "Perfil de riesgo de los establecimientos de crédito" del grupo 2 despliegue de soluciones analiticas de la Maestría en inteligencia analítica de datos para la toma de decisiones MIAD Universidad de los Andes Colombia.
 
@@ -34,6 +34,9 @@ En Colombia existe la Red de Seguridad del Sistema Financiero, conformada por en
  
 Por otro lado, se realizará un análisis de clústeres para identificar aquellos bancos que tienen perfiles de riesgo similares para que la Red supervise en mayor medida aquellos clústeres con mayor riesgo evitando posibles futuras quiebras de bancos o contagio sobre el resto del sistema financiero. Existen distintos métodos de clustering como k-medias, k-medoides o clustering jerárquico. Una de las ventajas de este último frente a los primeros es que no se necesita definir a priori el número de clústeres a calcular y es la metodología que se usa en la literatura revisada. Sin embargo, en este documento se probarán distintos métodos y a partir de los resultados se seleccionará el que genere los mejores resultados.
 
+## Solución planteada
+
+Se creará una herramienta de visualización de tendencias históricas para dichos indicadores de riesgo, con la posibilidad de que el usuario final pueda revisar por entidad la evolución de dicho indicador. También en dicha herramienta se podrá observar las distintas agrupaciones de entidades financieras por perfil de riesgo.
 
 ## Integrantes: 
 - Laura Becerra
