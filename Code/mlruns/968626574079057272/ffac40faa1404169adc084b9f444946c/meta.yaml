@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/ffac40faa1404169adc084b9f444946c/artifacts
+end_time: 1699838493697
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: ffac40faa1404169adc084b9f444946c
+run_name: persistent-cow-359
+run_uuid: ffac40faa1404169adc084b9f444946c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1699838493585
+status: 3
+tags: []
+user_id: ubuntu

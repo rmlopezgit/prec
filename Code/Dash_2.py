@@ -4,8 +4,7 @@
 # In[14]:
 
 import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dcc, html
 from dash.dependencies import Input, Output
 import pandas as pd
 import plotly.express as px
@@ -14,7 +13,7 @@ import json
 
 # Cargar tu DataFrame
 def load_data_2():
-    data_ind = pd.read_excel(r'C:/Users/rlope/Downloads/resultados_clusterizacion.xlsx', sheet_name='Sheet1')
+    data_ind = pd.read_excel(r'/home/ubuntu/prec/data/resultados_clusterizacion.xlsx', sheet_name='Sheet1')
     data_ind['Fecha'] = pd.to_datetime(data_ind['Fecha'])
     data_ind = data_ind.set_index("Fecha")
     data_ind = data_ind.sort_index()
@@ -251,4 +250,4 @@ def update_graph2(selected_entidades, selected_years):
 
 # Ejecutar la aplicación
 if __name__ == '__main__':
-    app.run_server(port=8050)
+    app.run_server(host="0.0.0.0",port=8050)

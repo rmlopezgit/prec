@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/017b7b560ba8467186ff7aa352c44ccf/artifacts
+end_time: 1699838493582
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: 017b7b560ba8467186ff7aa352c44ccf
+run_name: redolent-foal-875
+run_uuid: 017b7b560ba8467186ff7aa352c44ccf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1699838493326
+status: 3
+tags: []
+user_id: ubuntu

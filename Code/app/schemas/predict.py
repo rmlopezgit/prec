@@ -25,7 +25,7 @@ class MultipleDataInputs(BaseModel):
     inputs: List[DataInputSchema]
 
     class Config:
-        schema_extra = {
+        json_schema_extra = {
             "example": {
                 "inputs": [
                     {

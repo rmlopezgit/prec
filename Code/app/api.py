@@ -9,8 +9,6 @@ import pandas as pd
 from fastapi import APIRouter
 from fastapi.encoders import jsonable_encoder
 from loguru import logger
-#from model import __version__ as model_version
-#from model.predict import make_prediction
 
 import schemas
 from config import settings
@@ -24,7 +22,7 @@ def health() -> dict:
     Root Get
     """
     health = schemas.Health(
-        name=settings.PROJECT_NAME, api_version=1.0, model_version=1.1
+        name=settings.PROJECT_NAME, api_version=1.0, my_model_version=1.1
     )
 
     return health.dict()
@@ -40,8 +38,8 @@ async def predict(input_data: schemas.MultipleDataInputs) -> Any:
 
     logger.info(f"Making prediction on inputs: {input_data.inputs}")
     
-    #datos = pd.read_excel(r'/home/ubuntu/prec/data/data.xlsx', sheet_name='Datos')
-    datos1 = pd.read_excel(r'C:/Users/rlope/Downloads/data.xlsx', sheet_name='Datos')
+    datos1 = pd.read_excel(r'/home/ubuntu/prec/data/data.xlsx', sheet_name='Datos')
+    #datos1 = pd.read_excel(r'C:/Users/rlope/Downloads/data.xlsx', sheet_name='Datos')
     input_df['Fecha'] = pd.to_datetime(input_df['Fecha'])
     datos = pd.concat([input_df, datos1], ignore_index=True)
     datos_2 = datos
@@ -68,11 +66,11 @@ async def predict(input_data: schemas.MultipleDataInputs) -> Any:
     indicador['Entidad'] = datos_2['Entidad']
     indicador['Cluster'] = pd.DataFrame({'Cluster': clusters})
 
-    #indicador.to_excel('/home/ubuntu/prec/data/PCA_ncomp_1.xlsx', index=False)
-    indicador.to_excel('C:/Users/rlope/Downloads/resultados_clusterizacion.xlsx', index=False)
+    indicador.to_excel('/home/ubuntu/prec/data/resultados_clusterizacion.xlsx', index=False)
+    #indicador.to_excel('C:/Users/rlope/Downloads/resultados_clusterizacion.xlsx', index=False)
 
     results = {
-        "predictions":datos.head(5),
+        "predictions":datos.head(5).to_dict(orient='records'),
         "errors":"NaN",
         "version":"1.0"}
 
