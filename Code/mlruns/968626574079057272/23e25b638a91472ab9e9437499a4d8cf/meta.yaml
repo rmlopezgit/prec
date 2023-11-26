@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/23e25b638a91472ab9e9437499a4d8cf/artifacts
+end_time: 1700962449977
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: 23e25b638a91472ab9e9437499a4d8cf
+run_name: bemused-squirrel-665
+run_uuid: 23e25b638a91472ab9e9437499a4d8cf
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700962449770
+status: 3
+tags: []
+user_id: rlope

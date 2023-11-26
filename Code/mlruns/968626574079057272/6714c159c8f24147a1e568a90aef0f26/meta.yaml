@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/6714c159c8f24147a1e568a90aef0f26/artifacts
+end_time: 1700929762816
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: 6714c159c8f24147a1e568a90aef0f26
+run_name: enthused-lamb-710
+run_uuid: 6714c159c8f24147a1e568a90aef0f26
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700929762619
+status: 3
+tags: []
+user_id: rlope

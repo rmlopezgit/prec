@@ -58,10 +58,9 @@ async def predict(input_data: schemas.MultipleDataInputs) -> Any:
     distances = linkage(x_reduced, method='average', metric="euclidean")
     clusters = fcluster(distances, 3, criterion="distance")
     #score_7 = silhouette_score(x_reduced, clusters)
-    indicador = x_reduced[:, 1]
+    indicador = x_reduced[:, 0]
     indicador = pd.DataFrame(indicador)
     indicador.rename(columns={0: 'Indicador'}, inplace=True)
-    indicador.rename(columns={1: 'Indicador_2'}, inplace=True)
 
     # Se integran los campos de Fecha y Banco de la base:
     indicador['Indicador2'] = x_reduced[:,1]

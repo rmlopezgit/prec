@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/dc5b684f7fe24b6388621294e686f767/artifacts
+end_time: 1700962450442
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: dc5b684f7fe24b6388621294e686f767
+run_name: bustling-cat-783
+run_uuid: dc5b684f7fe24b6388621294e686f767
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700962450213
+status: 3
+tags: []
+user_id: rlope
