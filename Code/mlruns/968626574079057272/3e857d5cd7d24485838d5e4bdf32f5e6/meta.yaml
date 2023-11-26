@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/3e857d5cd7d24485838d5e4bdf32f5e6/artifacts
+end_time: 1700929763030
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: 3e857d5cd7d24485838d5e4bdf32f5e6
+run_name: placid-shoat-205
+run_uuid: 3e857d5cd7d24485838d5e4bdf32f5e6
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700929762824
+status: 3
+tags: []
+user_id: rlope

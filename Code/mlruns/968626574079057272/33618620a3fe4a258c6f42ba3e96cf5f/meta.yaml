@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/33618620a3fe4a258c6f42ba3e96cf5f/artifacts
+end_time: 1700929763240
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: 33618620a3fe4a258c6f42ba3e96cf5f
+run_name: worried-grub-102
+run_uuid: 33618620a3fe4a258c6f42ba3e96cf5f
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700929763036
+status: 3
+tags: []
+user_id: rlope

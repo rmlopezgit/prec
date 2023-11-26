@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/571c41d119304b889f63dbd28d4f4e61/artifacts
+end_time: 1700929762613
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: 571c41d119304b889f63dbd28d4f4e61
+run_name: delicate-finch-608
+run_uuid: 571c41d119304b889f63dbd28d4f4e61
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700929762414
+status: 3
+tags: []
+user_id: rlope

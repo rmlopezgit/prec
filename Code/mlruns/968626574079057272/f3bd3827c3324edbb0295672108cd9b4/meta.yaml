@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/f3bd3827c3324edbb0295672108cd9b4/artifacts
+end_time: 1700962450207
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: f3bd3827c3324edbb0295672108cd9b4
+run_name: exultant-robin-655
+run_uuid: f3bd3827c3324edbb0295672108cd9b4
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700962449983
+status: 3
+tags: []
+user_id: rlope

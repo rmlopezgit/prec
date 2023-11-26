@@ -1,0 +1,15 @@
+artifact_uri: file:///home/ubuntu/prec/Code/mlruns/968626574079057272/f64be6b671a6408e946e548f6a48242e/artifacts
+end_time: 1700962450671
+entry_point_name: ''
+experiment_id: '968626574079057272'
+lifecycle_stage: active
+run_id: f64be6b671a6408e946e548f6a48242e
+run_name: bemused-frog-36
+run_uuid: f64be6b671a6408e946e548f6a48242e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700962450449
+status: 3
+tags: []
+user_id: rlope
