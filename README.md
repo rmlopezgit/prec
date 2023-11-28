@@ -38,6 +38,10 @@ Por otro lado, se realizará un análisis de clústeres para identificar aquello
 
 Se creará una herramienta de visualización de tendencias históricas para dichos indicadores de riesgo, con la posibilidad de que el usuario final pueda revisar por entidad la evolución de dicho indicador. También en dicha herramienta se podrá observar las distintas agrupaciones de entidades financieras por perfil de riesgo.
 
+## Video solución
+
+El siguiente video contiene un resumen de la implementación de la herramienta y la metodología utilizada https://youtu.be/Ozm4Lyznqmk
+
 ## Integrantes: 
 - Laura Becerra
 - Cesar Porras
